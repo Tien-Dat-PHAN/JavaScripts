@@ -48,6 +48,12 @@ void calculate(int a, int b, int *sum, int *product){
     *product = a*b;
 }
 
+void swap(int *a, int *b){
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+
 //To conclude, you should use pointer any times and any where
 
 int main() {
@@ -61,5 +67,8 @@ int main() {
     printf("%d", list[i]);
    }
 
+    int a = 3, b =4;
+    swap(&a,&b);
+    printf("a = %d, b = %d",a,b);
     return 0;
 }

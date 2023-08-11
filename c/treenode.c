@@ -34,7 +34,6 @@ struct TreeNode *insert(struct TreeNode *root, int value){
     return root;
 }
 
-
 void inorderTraversal(struct TreeNode *root){
     if (root!= NULL){
         inorderTraversal(root->left);
@@ -43,19 +42,32 @@ void inorderTraversal(struct TreeNode *root){
     }
 }
 
+void display(struct TreeNode *root){
+    if (root != NULL){
+        struct TreeNode *current = root;
+        printf("%d\n", current->data);
+        //printf("%d\t%d", current->left->data, current->right->data);
+        
+        display(current->left);
+        display(current->right);
+
+        
+    }
+}
 
 int main(){
 
     struct TreeNode *root = NULL;
 
-    root = insert(root, 50);
-    root = insert(root, 40);
-    root = insert(root, 60);
-    root = insert(root, 10);
-    root = insert(root, 70);
-    root = insert(root, 20);
-    root = insert(root, 40);
+    root = insert(root, 5);
+    root = insert(root, 4);
+    root = insert(root, 6);
+    root = insert(root, 1);
+    root = insert(root, 7);
+    root = insert(root, 2);
+    root = insert(root, 9);
     printf("In-order Traversal\n");
-    inorderTraversal(root);
+    display(root);
     printf("\n");
 }
+

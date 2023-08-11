@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>    
+        var product ={
+            name: 'stock',
+            price: 1000,
+            greet: function(){
+                console.log('Hello, this name '+ this.name +' and its price is ' + this.price);
+            },
+
+            increment: function(p){
+                p = p+1;
+                return p;
+            }
+        };
+        console.log(product.name);
+        console.log(product.price);
+        product.greet();
+
+        var input = prompt("Please enter an input: ");
+        console.log("Your input is " + input);
+        console.log("Increment: "+ product.increment(input));
+
+    </script>
+</body>
+</html>
